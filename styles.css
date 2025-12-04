@@ -1,0 +1,183 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+               "Segoe UI", sans-serif;
+  background-color: #f5f5f7;
+  color: #111;
+  line-height: 1.6;
+}
+
+/* Layout */
+
+.inner {
+  max-width: 840px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header */
+
+.site-header {
+  padding: 48px 0 32px;
+}
+
+.site-title {
+  font-size: 2.4rem;
+  letter-spacing: -0.03em;
+  margin: 0 0 8px;
+}
+
+.site-subtitle {
+  margin: 0;
+  max-width: 600px;
+  color: #555;
+  font-size: 0.98rem;
+}
+
+/* Main content */
+
+.site-main {
+  padding-bottom: 48px;
+}
+
+.section {
+  margin-bottom: 40px;
+  background: #fff;
+  border-radius: 16px;
+  padding: 24px 20px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.04);
+}
+
+.section-title {
+  margin: 0 0 16px;
+  font-size: 1.2rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #777;
+}
+
+/* Project cards */
+
+.project-card {
+  border-radius: 14px;
+  padding: 18px 16px 16px;
+  border: 1px solid #e2e2e7;
+  background: #fafafa;
+}
+
+.project-card + .project-card {
+  margin-top: 18px;
+}
+
+.project-title {
+  margin: 0 0 4px;
+  font-size: 1.15rem;
+}
+
+.project-tagline {
+  margin: 0 0 8px;
+  color: #444;
+  font-size: 0.98rem;
+}
+
+.project-meta {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 10px;
+  color: #666;
+  font-size: 0.85rem;
+}
+
+.project-meta li + li {
+  margin-top: 2px;
+}
+
+.project-description {
+  margin: 0 0 12px;
+  font-size: 0.95rem;
+}
+
+/* Buttons / links */
+
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid #d0d0d7;
+  background: #fff;
+  font-size: 0.9rem;
+  text-decoration: none;
+  color: #111;
+  transition: background 0.15s ease, transform 0.1s ease,
+              box-shadow 0.1s ease, border-color 0.1s ease;
+}
+
+.btn:hover {
+  background: #f0f0f5;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  border-color: #babac4;
+}
+
+.btn.disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* Contact */
+
+.contact-links a {
+  margin-right: 12px;
+  text-decoration: none;
+  color: #0071e3;
+  font-size: 0.95rem;
+}
+
+contact-links a:hover {
+  text-decoration: underline;
+}
+
+/* Code styling */
+
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.9em;
+  background: #f0f0f4;
+  padding: 1px 4px;
+  border-radius: 4px;
+}
+
+/* Small screens */
+
+@media (max-width: 600px) {
+  .site-header {
+    padding-top: 32px;
+    padding-bottom: 20px;
+  }
+
+  .site-title {
+    font-size: 2rem;
+  }
+
+  .section {
+    padding: 18px 16px;
+  }
+}
