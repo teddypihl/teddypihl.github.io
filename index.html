@@ -2,80 +2,241 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Karl-Theodor Pihl – Portfolio</title>
+  <title>Karl-Theodor Pihl – Developer Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="site-header">
-    <div class="inner">
-      <h1 class="site-title">Karl-Theodor Pihl</h1>
-      <p class="site-subtitle">
-        Computer engineering student &amp; developer.
-      </p>
+  <header class="top-nav">
+    <div class="inner nav-inner">
+      <div class="nav-left">
+        <span class="nav-logo">KP</span>
+        <span class="nav-name">Karl-Theodor Pihl</span>
+      </div>
+      <nav class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#stack">My Stack</a>
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
   </header>
 
-  <main class="site-main">
-    <div class="inner">
-      <section class="section">
-        <h2 class="section-title">Selected Projects</h2>
-
-        <!-- Tiny Run Router -->
-        <article class="project-card">
-          <h3 class="project-title">Tiny Run Router</h3>
-          <p class="project-tagline">
-            Generate smooth running loops on real city streets, edit the route directly on the map,
-            then snap it back to the road network.
+  <main>
+    <!-- HERO -->
+    <section id="home" class="section hero">
+      <div class="inner hero-inner">
+        <div class="hero-text">
+          <p class="hero-kicker">Computer Engineering @ Åbo Akademi</p>
+          <h1>Hi, I'm Karl-Theodor Pihl.</h1>
+          <p class="hero-subtitle">
+            I design and build small, focused tools – from audio plugins to backend services. I enjoy projects where software meets the physical world.
           </p>
-
-          <ul class="project-meta">
-            <li>Python · FastAPI · OSMnx · Leaflet</li>
-            <li>Custom graph routing, editable map UI</li>
-          </ul>
-
-          <p class="project-description">
-            The backend downloads a walkable street network from OpenStreetMap using <code>osmnx</code>,
-            builds an internal graph, and searches for “nice” loops using Dijkstra-based routing.
-            The frontend is a vanilla JS + Leaflet app with a clean UI that lets you
-            drag and tweak the route. Edits are sent back to the backend, which re-snaps the path to
-            real roads and recalculates distance. The backend is running on router so it might take a few minutes
-            running the code on cold-start or when changing the city.
-          </p>
-
-          <div class="project-links">
-            <a class="btn" href="https://teddypihl.github.io/tiny-run-router/" target="_blank" rel="noopener">
-                Live demo
-            </a>
-            <a class="btn" href="https://github.com/teddypihl/tiny-run-router" target="_blank" rel="noopener">
-              View source on GitHub
+          <div class="hero-actions">
+            <a class="btn primary" href="#projects">View my projects</a>
+            <a class="btn ghost" href="https://github.com/teddypihl" target="_blank" rel="noopener">
+              GitHub
             </a>
           </div>
-        </article>
+        </div>
+        <div class="hero-side">
+          <div class="hero-card">
+            <p class="hero-card-label">Currently</p>
+            <p class="hero-card-main">
+              Finishing my Masters Degree in Computer Engineering and
+              building practical projects to sharpen my skills for future dev roles.
+            </p>
+            <p class="hero-card-small">
+              Interested in front- & backend, data-heavy apps, automation and developer tools.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      </section>
+    <!-- STACK -->
+    <section id="stack" class="section">
+      <div class="inner">
+        <h2 class="section-title">My Stack</h2>
+        <p class="section-lead">
+          Tools and technologies I use the most at the moment.
+        </p>
 
-      <section class="section">
+        <div class="chip-grid">
+          <div class="chip-group">
+            <h3>Backend &amp; APIs</h3>
+            <div class="chip-row">
+              <span class="chip">Python</span>
+              <span class="chip">FastAPI</span>
+              <span class="chip">Node.js</span>
+              <span class="chip">REST APIs</span>
+            </div>
+          </div>
+
+          <div class="chip-group">
+            <h3>Data &amp; Tools</h3>
+            <div class="chip-row">
+              <span class="chip">OSMnx</span>
+              <span class="chip">NumPy</span>
+              <span class="chip">Pandas</span>
+              <span class="chip">Git &amp; GitHub</span>
+            </div>
+          </div>
+
+          <div class="chip-group">
+            <h3>Frontend &amp; UX</h3>
+            <div class="chip-row">
+              <span class="chip">HTML</span>
+              <span class="chip">CSS</span>
+              <span class="chip">JavaScript</span>
+              <span class="chip">Leaflet</span>
+            </div>
+          </div>
+
+          <div class="chip-group">
+            <h3>Other</h3>
+            <div class="chip-row">
+              <span class="chip">Linux</span>
+              <span class="chip">Docker (basics)</span>
+              <span class="chip">Automation &amp; scripting</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+      <div class="inner">
+        <h2 class="section-title">Projects</h2>
+        <p class="section-lead">
+          A few of the things I’ve been building recently.
+        </p>
+
+        <div class="projects-grid">
+          <!-- Tiny Run Router -->
+          <article class="project-card">
+            <p class="project-label">Maps · Algorithms · FastAPI</p>
+            <h3 class="project-title">Tiny Run Router</h3>
+            <p class="project-tagline">
+              Generate smooth running loops on real city streets, edit the route on an interactive map,
+              then snap it back to the road network.
+            </p>
+            <p class="project-description">
+              The backend fetches a walkable street graph from OpenStreetMap using <code>osmnx</code>, builds a custom
+              graph model and searches for “nice” loops with a Dijkstra-based algorithm. A vanilla JS + Leaflet frontend
+              lets the user drag vertices, rubber-band the shape and send edits back to the backend, which re-snaps the path to
+              real roads and recalculates distance and elevation.
+            </p>
+            <p class="project-meta">
+              Python · FastAPI · OSMnx · Leaflet · GitHub Pages · Render
+            </p>
+            <div class="project-links">
+              <a class="btn primary" href="https://teddypihl.github.io/tiny-run-router/" target="_blank" rel="noopener">
+                Live demo
+              </a>
+              <a class="btn ghost" href="https://github.com/teddypihl/tiny-run-router" target="_blank" rel="noopener">
+                Source code
+              </a>
+            </div>
+          </article>
+
+          <!-- Placeholder for another project -->
+          <article class="project-card project-card--ghost">
+            <p class="project-label">Next project</p>
+            <h3 class="project-title">Your next idea here</h3>
+            <p class="project-tagline">
+              I keep this slot open for the next thing I ship.
+            </p>
+            <p class="project-description">
+              Could be a Strava analytics dashboard, an automation tool, or something completely different.
+              I like taking an idea from a rough sketch to a working prototype that I can host and iterate on.
+            </p>
+            <p class="project-meta">
+              Always building and learning.
+            </p>
+          </article>
+        </div>
+
+        <!-- React-root för widgeten -->
+        <div id="react-widget-root"></div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <div class="inner">
         <h2 class="section-title">About</h2>
-        <p>
-          I’m studying computer engineering at Åbo Akademi and I enjoy projects where software meets
-          the real world: maps, sensors, running data, automation and performance.
-          I like taking an idea from “this would be cool” to a working prototype with a clean UI.
-        </p>
-      </section>
+        <div class="about-grid">
+          <div>
+            <p>
+              I’m a computer engineering student at Åbo Akademi with a strong interest in software that interacts
+              with the real world: maps, sensors, automation, and performance-oriented systems.
+            </p>
+            <p>
+              I enjoy understanding how things work under the hood – from graph algorithms and
+              route planning to deployment and monitoring – and I try to learn by building small
+              but complete projects end-to-end.
+            </p>
+          </div>
+          <div>
+            <p>
+              Outside of studies I’m into running and sports, which is why many of my ideas are related to
+              training data, routes, and tools that make everyday life a bit easier or more fun.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      <section class="section">
+    <!-- CONTACT -->
+    <section id="contact" class="section section--last">
+      <div class="inner">
         <h2 class="section-title">Contact</h2>
-        <p>
-          You can reach me at:
+        <p class="section-lead">
+          Want to talk about a project, internship or just say hi?
+        </p>
+
+        <div class="contact-card">
+          <p>Email</p>
           <a href="mailto:karl-theodor.pihl@abo.fi">karl-theodor.pihl@abo.fi</a>
-        </p>
-        <p class="contact-links">
+        </div>
+
+        <div class="contact-links">
           <a href="https://github.com/teddypihl" target="_blank" rel="noopener">GitHub</a>
-          
-        </p>
-      </section>
-    </div>
-  </main>
+          <!-- Lägg till LinkedIn-länk här om du vill -->
+        </div>
+      </div>
+    </section>
+</main>
+
+  <!-- Smooth scroll for nav links -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+
+      navLinks.forEach((link) => {
+        link.addEventListener("click", (event) => {
+          event.preventDefault();
+          const targetId = link.getAttribute("href").substring(1);
+          const targetEl = document.getElementById(targetId);
+          if (!targetEl) return;
+
+          targetEl.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        });
+      });
+    });
+  </script>
+
+  <!-- React via CDN -->
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+
+  <!-- Din React-widget -->
+  <script src="react-widget.js"></script>
 </body>
 </html>
