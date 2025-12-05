@@ -1,6 +1,7 @@
 // Enkel liten React-komponent
 const e = React.createElement;
 
+ /*
 function TinyRunStats() {
   const [clicks, setClicks] = React.useState(0);
 
@@ -27,6 +28,8 @@ function TinyRunStats() {
     )
   );
 }
+*/
+
 
 // Montera i div:en vi la in
 const rootEl = document.getElementById("react-widget-root");
