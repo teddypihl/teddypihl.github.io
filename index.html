@@ -106,70 +106,97 @@
       </div>
     </section>
 
-    <!-- PROJECTS -->
-    <section id="projects" class="section">
-      <div class="inner">
-        <h2 class="section-title">Projects</h2>
-        <p class="section-lead">
-          A few of the things I’ve been building recently.
+      <!-- PROJECTS -->
+<section id="projects" class="section">
+  <div class="inner">
+    <h2 class="section-title">Projects</h2>
+    <p class="section-lead">
+      A few of the things I’ve been building recently.
+    </p>
+
+    <div class="projects-grid">
+
+      <!-- PID Lab (FIRST) -->
+      <article class="project-card">
+        <p class="project-label">Control · Simulation · React</p>
+        <h3 class="project-title">PID Lab</h3>
+        <p class="project-tagline">
+          Simulink-style PID playground in the browser.
         </p>
-
-        <div class="projects-grid">
-          <!-- Tiny Run Router -->
-          <article class="project-card">
-            <p class="project-label">Maps · Algorithms · FastAPI</p>
-            <h3 class="project-title">Tiny Run Router</h3>
-            <p class="project-tagline">
-              Generate smooth running loops on real city streets, edit the route on an interactive map,
-              then snap it back to the road network.
-            </p>
-            <p class="project-description">
-              The backend fetches a walkable street graph from OpenStreetMap using <code>osmnx</code>, builds a custom
-              graph model and searches for “nice” loops with a Dijkstra-based algorithm. A vanilla JS + Leaflet frontend
-              lets the user drag vertices, rubber-band the shape and send edits back to the backend, which re-snaps the path to
-              real roads and recalculates distance and elevation.
-            </p>
-            <p class="project-meta">
-              Python · FastAPI · OSMnx · Leaflet · GitHub Pages · Render
-            </p>
-            <div class="project-links">
-              <a class="btn primary" href="https://teddypihl.github.io/tiny-run-router/" target="_blank" rel="noopener">
-                Live demo
-              </a>
-              <a class="btn ghost" href="https://github.com/teddypihl/tiny-run-router" target="_blank" rel="noopener">
-                Source code
-              </a>
-            </div>
-          </article>
-
-          <!-- Placeholder for another project -->
-          <!-- PID Lab -->
-<article class="project-card">
-  <p class="project-label">Control · Simulation · React</p>
-  <h3 class="project-title">PID Lab</h3>
-  <p class="project-tagline">
-    Simulink-style PID playground in the browser.
-  </p>
-  <p class="project-description">
-    A small block-diagram editor where you can drag blocks (Step, Controller, Plant, Scope),
-    connect them with arrows and simulate a first-order system with P/PI/PID control.
-    The scope overlay shows the step response directly inside the canvas, with basic
-    performance metrics like overshoot, rise time and steady-state error.
-  </p>
-  <p class="project-meta">
-    TypeScript · React · Vite · GitHub Pages
-  </p>
-  <div class="project-links">
-    <a class="btn primary" href="https://teddypihl.github.io/pid-lab/" target="_blank" rel="noopener">
-      Live demo
-    </a>
-    <a class="btn ghost" href="https://github.com/teddypihl/pid-lab" target="_blank" rel="noopener">
-      Source code
-    </a>
-  </div>
-</article>
-
+        <p class="project-description">
+          A small block-diagram editor where you can drag blocks (Step, Controller, Plant, Scope),
+          connect them with arrows and simulate a first-order system with P/PI/PID control.
+          The scope overlay shows the step response directly inside the canvas, with basic
+          performance metrics like overshoot, rise time and steady-state error.
+        </p>
+        <p class="project-meta">
+          TypeScript · React · Vite · GitHub Pages
+        </p>
+        <div class="project-links">
+          <a class="btn primary" href="https://teddypihl.github.io/pid-lab/" target="_blank" rel="noopener">
+            Live demo
+          </a>
+          <a class="btn ghost" href="https://github.com/teddypihl/pid-lab" target="_blank" rel="noopener">
+            Source code
+          </a>
         </div>
+      </article>
+
+      <!-- Wind Tunnel (SECOND) -->
+      <article class="project-card">
+        <p class="project-label">Aero · Visualization · Three.js</p>
+        <h3 class="project-title">Wind Tunnel</h3>
+        <p class="project-tagline">
+          Real-time airflow visualization around a simplified car + wings.
+        </p>
+        <p class="project-description">
+          A lightweight “wind tunnel” sandbox built for intuition: thousands of instanced flow particles
+          advect through a procedural flow field. The model includes deflection around a smooth car body
+          (ellipsoid obstacle), underfloor acceleration + suction (diffuser / ride height), front-wing downwash
+          with tip-vortex pairs, rear-wing downwash, plus a wake region with a velocity deficit and a counter-rotating
+          vortex pair. Tuned for interactive performance and clear visuals rather than full CFD.
+        </p>
+        <p class="project-meta">
+          TypeScript · React · react-three-fiber · Three.js · GitHub Pages
+        </p>
+        <div class="project-links">
+          <a class="btn primary" href="https://teddypihl.github.io/windtunnel/" target="_blank" rel="noopener">
+            Live demo
+          </a>
+          <a class="btn ghost" href="https://teddypihl.github.io/windtunnel/" target="_blank" rel="noopener">
+            Source code
+          </a>
+        </div>
+      </article>
+
+      <!-- Tiny Run Router (THIRD) -->
+      <article class="project-card">
+        <p class="project-label">Maps · Algorithms · FastAPI</p>
+        <h3 class="project-title">Tiny Run Router</h3>
+        <p class="project-tagline">
+          Generate smooth running loops on real city streets, edit the route on an interactive map,
+          then snap it back to the road network.
+        </p>
+        <p class="project-description">
+          The backend fetches a walkable street graph from OpenStreetMap using <code>osmnx</code>, builds a custom
+          graph model and searches for “nice” loops with a Dijkstra-based algorithm. A vanilla JS + Leaflet frontend
+          lets the user drag vertices, rubber-band the shape and send edits back to the backend, which re-snaps the path to
+          real roads and recalculates distance and elevation.
+        </p>
+        <p class="project-meta">
+          Python · FastAPI · OSMnx · Leaflet · GitHub Pages · Render
+        </p>
+        <div class="project-links">
+          <a class="btn primary" href="https://teddypihl.github.io/tiny-run-router/" target="_blank" rel="noopener">
+            Live demo
+          </a>
+          <a class="btn ghost" href="https://github.com/teddypihl/tiny-run-router" target="_blank" rel="noopener">
+            Source code
+          </a>
+        </div>
+      </article>
+
+    </div>
 
         <!-- React-root för widgeten -->
         <div id="react-widget-root"></div>
