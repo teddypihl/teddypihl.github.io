@@ -2,55 +2,248 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Karl-Theodor Pihl – Developer Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Karl-Theodor Pihl – Developer Portfolio</title>
+  <meta name="description" content="Portfolio of Karl-Theodor Pihl: maps, visualization, automation, and performance-oriented developer tools." />
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
   <header class="top-nav">
     <div class="inner nav-inner">
       <div class="nav-left">
-        <span class="nav-logo">KP</span>
-        <span class="nav-name">Karl-Theodor Pihl</span>
+        <div class="brand">
+          <div class="brand-text">
+            <div class="brand-name">Karl-Theodor Pihl</div>
+            <div class="brand-sub">Computer Engineering · Åbo Akademi</div>
+          </div>
+        </div>
       </div>
-      <nav class="nav-links">
-        <a href="#home">Home</a>
-        <a href="#stack">My Stack</a>
+
+      <nav class="nav-links" aria-label="Primary">
         <a href="#projects">Projects</a>
+        <a href="#stack">Stack</a>
+        <a href="#experience">Experience</a>
         <a href="#about">About</a>
-        <a href="#contact">Contact</a>
+        <a href="#contact" class="nav-cta">Contact</a>
       </nav>
     </div>
   </header>
 
-  <main>
+  <main id="main">
     <!-- HERO -->
     <section id="home" class="section hero">
       <div class="inner hero-inner">
         <div class="hero-text">
-          <p class="hero-kicker">Computer Engineering @ Åbo Akademi</p>
-          <h1>Hi, I'm Karl-Theodor Pihl.</h1>
+          <p class="hero-kicker">Building practical tools where software meets the real world</p>
+          <h1>Hi, I’m Karl-Theodor.</h1>
           <p class="hero-subtitle">
-            I design and build small, focused tools – from audio plugins to backend services. I enjoy projects where software meets the physical world.
+            I build interactive, performance-minded web apps: route planning on real maps, Simulink-style control tools,
+            and real-time 3D visualization. I like projects with clear engineering constraints and crisp UX.
           </p>
+
           <div class="hero-actions">
-            <a class="btn primary" href="#projects">View my projects</a>
-            <a class="btn ghost" href="https://github.com/teddypihl" target="_blank" rel="noopener">
-              GitHub
-            </a>
+            <a class="btn primary" href="#projects">View projects</a>
+            <a class="btn ghost" href="https://github.com/teddypihl" target="_blank" rel="noopener">GitHub</a>
+            <!-- Optional: add CV PDF to repo root -->
+            <!-- <a class="btn ghost" href="/cv.pdf" target="_blank" rel="noopener">CV</a> -->
+          </div>
+
+          <div class="hero-chips" aria-label="Highlights">
+            <span class="chip chip--glow">Frontend + Backend</span>
+            <span class="chip">Maps + Algorithms</span>
+            <span class="chip">3D + Visualization</span>
+            <span class="chip">Automation</span>
+          </div>
+
+          <div class="hero-metrics">
+            <div class="metric">
+              <div class="metric-top">Focus</div>
+              <div class="metric-main">Interactive engineering tools</div>
+              <div class="metric-sub">Performance · UX · deployable projects</div>
+            </div>
+            <div class="metric">
+              <div class="metric-top">Location</div>
+              <div class="metric-main">Finland</div>
+              <div class="metric-sub">Open to internships / junior roles</div>
+            </div>
           </div>
         </div>
+
         <div class="hero-side">
           <div class="hero-card">
-            <p class="hero-card-label">Currently</p>
+            <div class="hero-card-row">
+              <span class="pill pill--ok">Available</span>
+              <span class="pill">2026 grad target</span>
+            </div>
+
+            <h2 class="hero-card-title">Currently</h2>
             <p class="hero-card-main">
-              Finishing my Masters Degree in Computer Engineering and
-              building practical projects to sharpen my skills for future dev roles.
+              Finishing my Master’s degree in Computer Engineering and building complete, end-to-end projects:
+              idea → prototype → deploy → iterate.
             </p>
-            <p class="hero-card-small">
-              Interested in front- & backend, data-heavy apps, automation and developer tools.
-            </p>
+
+            <div class="mini-list">
+              <div class="mini-item">
+                <div class="mini-dot"></div>
+                <div>
+                  <div class="mini-title">What I care about</div>
+                  <div class="mini-text">Clear interfaces, measurable results, clean code</div>
+                </div>
+              </div>
+              <div class="mini-item">
+                <div class="mini-dot"></div>
+                <div>
+                  <div class="mini-title">What I enjoy</div>
+                  <div class="mini-text">Maps, control systems, visualization, automation</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="hero-card-actions">
+              <a class="btn small ghost" href="#contact">Contact</a>
+              <a class="btn small ghost" href="#projects">See work</a>
+            </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+      <div class="inner">
+        <div class="section-head">
+          <div>
+            <h2 class="section-title">Projects</h2>
+            <p class="section-lead">Selected builds with a focus on real constraints, clear UX, and deployable results.</p>
+          </div>
+
+          <div class="projects-toolbar">
+            <div class="projects-filters" role="tablist" aria-label="Project filters">
+              <button class="filter-btn is-active" data-filter="all" role="tab">All</button>
+              <button class="filter-btn" data-filter="frontend" role="tab">Frontend</button>
+              <button class="filter-btn" data-filter="backend" role="tab">Backend</button>
+              <button class="filter-btn" data-filter="viz" role="tab">3D/Viz</button>
+              <button class="filter-btn" data-filter="algorithms" role="tab">Algorithms</button>
+            </div>
+
+            <input
+              class="projects-search"
+              type="search"
+              placeholder="Search (e.g. Three.js, FastAPI, control)…"
+              aria-label="Search projects"
+            />
+          </div>
+        </div>
+
+        <div class="projects-grid">
+
+          <!-- PID Lab -->
+          <article class="project-card reveal"
+            data-tags="frontend,react,control,simulation,typescript"
+          >
+            <div class="project-top">
+              <p class="project-label">Control · Simulation · React</p>
+              <div class="project-badges">
+                <span class="badge">Interactive</span>
+                <span class="badge">Metrics</span>
+              </div>
+            </div>
+
+            <h3 class="project-title">PID Lab</h3>
+            <p class="project-tagline">Simulink-style PID playground in the browser.</p>
+
+            <p class="project-description">
+              Block-diagram editor where you drag blocks (Step, Controller, Plant, Scope), connect them, and run a first-order simulation with P/PI/PID control.
+              The scope overlay shows the step response directly in-canvas with performance metrics (overshoot, rise time, steady-state error).
+            </p>
+
+            <ul class="project-bullets">
+              <li>Diagram UX: drag, connect, select — fast feedback.</li>
+              <li>Simulation: responsive plotting and metrics.</li>
+              <li>Deploy: GitHub Pages.</li>
+            </ul>
+
+            <p class="project-meta">TypeScript · React · Vite · GitHub Pages</p>
+
+            <div class="project-links">
+              <a class="btn primary" href="https://teddypihl.github.io/pid-lab/" target="_blank" rel="noopener">Live demo</a>
+              <a class="btn ghost" href="https://github.com/teddypihl/pid-lab" target="_blank" rel="noopener">Source code</a>
+            </div>
+          </article>
+
+          <!-- Wind Tunnel -->
+          <article class="project-card reveal"
+            data-tags="frontend,viz,3d,threejs,react,typescript"
+          >
+            <div class="project-top">
+              <p class="project-label">Aero · Visualization · Three.js</p>
+              <div class="project-badges">
+                <span class="badge">Real-time</span>
+                <span class="badge">Instanced</span>
+              </div>
+            </div>
+
+            <h3 class="project-title">Wind Tunnel</h3>
+            <p class="project-tagline">Real-time airflow visualization around a simplified car + wings.</p>
+
+            <p class="project-description">
+              A lightweight wind tunnel sandbox for intuition: thousands of instanced particles advect through a procedural flow field.
+              Includes deflection around a smooth car body, underfloor acceleration + suction (diffuser / ride height),
+              wing downwash effects, turbulence, and a wake with a velocity deficit + counter-rotating vortex pair.
+              Tuned for interactive performance and clarity (not full CFD).
+            </p>
+
+            <ul class="project-bullets">
+              <li>Flow field components: body deflection, underfloor, wing downwash, wake/vortices.</li>
+              <li>Rendering: instanced streak particles for performance.</li>
+              <li>Parameters: wing angles, ride height, diffuser efficiency.</li>
+            </ul>
+
+            <p class="project-meta">TypeScript · React · react-three-fiber · Three.js · GitHub Pages</p>
+
+            <div class="project-links">
+              <a class="btn primary" href="https://teddypihl.github.io/windtunnel/" target="_blank" rel="noopener">Live demo</a>
+              <a class="btn ghost" href="https://github.com/teddypihl/windtunnel" target="_blank" rel="noopener">Source code</a>
+            </div>
+          </article>
+
+          <!-- Tiny Run Router -->
+          <article class="project-card reveal"
+            data-tags="backend,frontend,algorithms,fastapi,maps,python"
+          >
+            <div class="project-top">
+              <p class="project-label">Maps · Algorithms · FastAPI</p>
+              <div class="project-badges">
+                <span class="badge">Routing</span>
+                <span class="badge">OSM</span>
+              </div>
+            </div>
+
+            <h3 class="project-title">Tiny Run Router</h3>
+            <p class="project-tagline">Generate running loops on real streets, then edit and snap back to the road network.</p>
+
+            <p class="project-description">
+              Backend fetches a walkable graph from OpenStreetMap (OSMnx), builds a graph model and searches for “nice” loops with a Dijkstra-based approach.
+              Frontend (vanilla JS + Leaflet) lets you drag vertices, rubber-band the route, then re-snap to roads and recompute distance/elevation.
+            </p>
+
+            <ul class="project-bullets">
+              <li>Graph + routing: loop search and path snapping.</li>
+              <li>Map UX: interactive edit + backend re-snap.</li>
+              <li>Deployment: Render + GitHub Pages.</li>
+            </ul>
+
+            <p class="project-meta">Python · FastAPI · OSMnx · Leaflet · GitHub Pages · Render</p>
+
+            <div class="project-links">
+              <a class="btn primary" href="https://teddypihl.github.io/tiny-run-router/" target="_blank" rel="noopener">Live demo</a>
+              <a class="btn ghost" href="https://github.com/teddypihl/tiny-run-router" target="_blank" rel="noopener">Source code</a>
+            </div>
+          </article>
+
         </div>
       </div>
     </section>
@@ -58,14 +251,17 @@
     <!-- STACK -->
     <section id="stack" class="section">
       <div class="inner">
-        <h2 class="section-title">My Stack</h2>
-        <p class="section-lead">
-          Tools and technologies I use the most at the moment.
-        </p>
+        <div class="section-head">
+          <div>
+            <h2 class="section-title">My Stack</h2>
+            <p class="section-lead">Tools I reach for most often — plus what I like building with them.</p>
+          </div>
+        </div>
 
         <div class="chip-grid">
           <div class="chip-group">
             <h3>Backend &amp; APIs</h3>
+            <p class="group-lead">Fast endpoints, clean data models, deployable services.</p>
             <div class="chip-row">
               <span class="chip">Python</span>
               <span class="chip">FastAPI</span>
@@ -76,130 +272,86 @@
 
           <div class="chip-group">
             <h3>Data &amp; Tools</h3>
+            <p class="group-lead">Exploration, pipelines, and iteration speed.</p>
             <div class="chip-row">
-              <span class="chip">OSMnx</span>
               <span class="chip">NumPy</span>
               <span class="chip">Pandas</span>
               <span class="chip">Git &amp; GitHub</span>
+              <span class="chip">Linux</span>
             </div>
           </div>
 
           <div class="chip-group">
             <h3>Frontend &amp; UX</h3>
+            <p class="group-lead">Interactive UI, maps, visualization, and polish.</p>
             <div class="chip-row">
-              <span class="chip">HTML</span>
-              <span class="chip">CSS</span>
-              <span class="chip">JavaScript</span>
+              <span class="chip">React</span>
+              <span class="chip">TypeScript</span>
+              <span class="chip">HTML/CSS</span>
               <span class="chip">Leaflet</span>
+              <span class="chip">Three.js</span>
             </div>
           </div>
 
           <div class="chip-group">
-            <h3>Other</h3>
+            <h3>Deployment</h3>
+            <p class="group-lead">Shipping projects that actually run for other people.</p>
             <div class="chip-row">
-              <span class="chip">Linux</span>
+              <span class="chip">GitHub Pages</span>
+              <span class="chip">Render</span>
               <span class="chip">Docker (basics)</span>
-              <span class="chip">Automation &amp; scripting</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-      <!-- PROJECTS -->
-<section id="projects" class="section">
-  <div class="inner">
-    <h2 class="section-title">Projects</h2>
-    <p class="section-lead">
-      A few of the things I’ve been building recently.
-    </p>
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section">
+      <div class="inner">
+        <h2 class="section-title">Experience</h2>
+        <p class="section-lead">A quick timeline of what I’m doing and what I want to do next.</p>
 
-    <div class="projects-grid">
+        <div class="timeline">
+          <div class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <div class="timeline-top">
+                <div class="timeline-title">M.Sc. Computer Engineering</div>
+                <div class="timeline-time">Åbo Akademi · Ongoing</div>
+              </div>
+              <div class="timeline-text">
+                Focus: automation, data-heavy apps, safety-critical & autonomous systems.
+              </div>
+            </div>
+          </div>
 
-      <!-- PID Lab (FIRST) -->
-      <article class="project-card">
-        <p class="project-label">Control · Simulation · React</p>
-        <h3 class="project-title">PID Lab</h3>
-        <p class="project-tagline">
-          Simulink-style PID playground in the browser.
-        </p>
-        <p class="project-description">
-          A small block-diagram editor where you can drag blocks (Step, Controller, Plant, Scope),
-          connect them with arrows and simulate a first-order system with P/PI/PID control.
-          The scope overlay shows the step response directly inside the canvas, with basic
-          performance metrics like overshoot, rise time and steady-state error.
-        </p>
-        <p class="project-meta">
-          TypeScript · React · Vite · GitHub Pages
-        </p>
-        <div class="project-links">
-          <a class="btn primary" href="https://teddypihl.github.io/pid-lab/" target="_blank" rel="noopener">
-            Live demo
-          </a>
-          <a class="btn ghost" href="https://github.com/teddypihl/pid-lab" target="_blank" rel="noopener">
-            Source code
-          </a>
+          <div class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <div class="timeline-top">
+                <div class="timeline-title">Portfolio Projects</div>
+                <div class="timeline-time">2024–2025</div>
+              </div>
+              <div class="timeline-text">
+                Building end-to-end tools (routing, simulation, 3D visualization), shipping to GitHub Pages / Render, iterating from user feedback.
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <div class="timeline-top">
+                <div class="timeline-title">Open to opportunities</div>
+                <div class="timeline-time">Internships · Junior dev</div>
+              </div>
+              <div class="timeline-text">
+                Interested in frontend, backend, full-stack, or developer tools — ideally with an engineering/visualization angle.
+              </div>
+            </div>
+          </div>
         </div>
-      </article>
-
-      <!-- Wind Tunnel (SECOND) -->
-      <article class="project-card">
-        <p class="project-label">Aero · Visualization · Three.js</p>
-        <h3 class="project-title">Wind Tunnel</h3>
-        <p class="project-tagline">
-          Real-time airflow visualization around a simplified car + wings.
-        </p>
-        <p class="project-description">
-          A lightweight “wind tunnel” sandbox built for intuition: thousands of instanced flow particles
-          advect through a procedural flow field. The model includes deflection around a smooth car body
-          (ellipsoid obstacle), underfloor acceleration + suction (diffuser / ride height), front-wing downwash
-          with tip-vortex pairs, rear-wing downwash, plus a wake region with a velocity deficit and a counter-rotating
-          vortex pair. Tuned for interactive performance and clear visuals rather than full CFD.
-        </p>
-        <p class="project-meta">
-          TypeScript · React · react-three-fiber · Three.js · GitHub Pages
-        </p>
-        <div class="project-links">
-          <a class="btn primary" href="https://teddypihl.github.io/windtunnel/" target="_blank" rel="noopener">
-            Live demo
-          </a>
-          <a class="btn ghost" href="https://teddypihl.github.io/windtunnel/" target="_blank" rel="noopener">
-            Source code
-          </a>
-        </div>
-      </article>
-
-      <!-- Tiny Run Router (THIRD) -->
-      <article class="project-card">
-        <p class="project-label">Maps · Algorithms · FastAPI</p>
-        <h3 class="project-title">Tiny Run Router</h3>
-        <p class="project-tagline">
-          Generate smooth running loops on real city streets, edit the route on an interactive map,
-          then snap it back to the road network.
-        </p>
-        <p class="project-description">
-          The backend fetches a walkable street graph from OpenStreetMap using <code>osmnx</code>, builds a custom
-          graph model and searches for “nice” loops with a Dijkstra-based algorithm. A vanilla JS + Leaflet frontend
-          lets the user drag vertices, rubber-band the shape and send edits back to the backend, which re-snaps the path to
-          real roads and recalculates distance and elevation.
-        </p>
-        <p class="project-meta">
-          Python · FastAPI · OSMnx · Leaflet · GitHub Pages · Render
-        </p>
-        <div class="project-links">
-          <a class="btn primary" href="https://teddypihl.github.io/tiny-run-router/" target="_blank" rel="noopener">
-            Live demo
-          </a>
-          <a class="btn ghost" href="https://github.com/teddypihl/tiny-run-router" target="_blank" rel="noopener">
-            Source code
-          </a>
-        </div>
-      </article>
-
-    </div>
-
-        <!-- React-root för widgeten -->
-        <div id="react-widget-root"></div>
       </div>
     </section>
 
@@ -208,23 +360,37 @@
       <div class="inner">
         <h2 class="section-title">About</h2>
         <div class="about-grid">
-          <div>
+          <div class="reveal">
             <p>
-              I’m a computer engineering student at Åbo Akademi with a strong interest in software that interacts
-              with the real world: maps, sensors, automation, and performance-oriented systems.
+              I’m a computer engineering student with a strong interest in software that interacts with the real world:
+              maps, sensors, automation, and performance-oriented systems.
             </p>
             <p>
-              I enjoy understanding how things work under the hood – from graph algorithms and
-              route planning to deployment and monitoring – and I try to learn by building small
-              but complete projects end-to-end.
-            </p>
-          </div>
-          <div>
-            <p>
-              Outside of studies I’m into running and sports, which is why many of my ideas are related to
-              training data, routes, and tools that make everyday life a bit easier or more fun.
+              I like understanding how things work under the hood — from graph algorithms to simulation loops —
+              and packaging them into clean, practical tools.
             </p>
           </div>
+          <div class="reveal">
+            <p>
+              Outside of studies I’m into running and sports, which is why many of my ideas relate to routes,
+              training data, and tools that make everyday life a bit easier (or more fun).
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section">
+      <div class="inner">
+        <div class="cta reveal">
+          <div>
+            <h2 class="cta-title">Want to build something useful?</h2>
+            <p class="cta-text">
+              If you’re hiring or want to collaborate, I’m happy to chat.
+            </p>
+          </div>
+          <a class="btn primary" href="#contact">Contact me</a>
         </div>
       </div>
     </section>
@@ -233,49 +399,22 @@
     <section id="contact" class="section section--last">
       <div class="inner">
         <h2 class="section-title">Contact</h2>
-        <p class="section-lead">
-          Want to talk about a project, internship or just say hi?
-        </p>
+        <p class="section-lead">Want to talk about a project, internship or just say hi?</p>
 
-        <div class="contact-card">
+        <div class="contact-card reveal">
           <p>Email</p>
           <a href="mailto:karl-theodor.pihl@abo.fi">karl-theodor.pihl@abo.fi</a>
         </div>
 
-        <div class="contact-links">
+        <div class="contact-links reveal">
           <a href="https://github.com/teddypihl" target="_blank" rel="noopener">GitHub</a>
-          <!-- Lägg till LinkedIn-länk här om du vill -->
+          <!-- Add LinkedIn when ready -->
+          <!-- <a href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener">LinkedIn</a> -->
         </div>
       </div>
     </section>
-</main>
+  </main>
 
-  <!-- Smooth scroll for nav links -->
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
-
-      navLinks.forEach((link) => {
-        link.addEventListener("click", (event) => {
-          event.preventDefault();
-          const targetId = link.getAttribute("href").substring(1);
-          const targetEl = document.getElementById(targetId);
-          if (!targetEl) return;
-
-          targetEl.scrollIntoView({
-            behavior: "smooth",
-            block: "start",
-          });
-        });
-      });
-    });
-  </script>
-
-  <!-- React via CDN -->
-  <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
-  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
-
-  <!-- Din React-widget -->
-  <script src="react-widget.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>
