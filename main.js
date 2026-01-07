@@ -8,9 +8,34 @@ document.addEventListener("DOMContentLoaded", () => {
       const id = href.substring(1);
       const el = document.getElementById(id);
       if (!el) return;
+
       event.preventDefault();
+
+      // Click ring animation for top nav links
+      // Click ring animation for top nav links
+if (link.closest(".nav-links") && !link.classList.contains("nav-cta")) {
+  // restart cleanly
+  link.classList.remove("is-releasing");
+  link.classList.remove("is-pressed");
+  void link.offsetWidth;
+
+  // draw full ring
+  link.classList.add("is-pressed");
+
+  // then erase forward (same direction)
+  setTimeout(() => {
+    link.classList.remove("is-pressed");
+    link.classList.add("is-releasing");
+
+    // after erase finishes, drop back to idle (fade rules kick in)
+    setTimeout(() => link.classList.remove("is-releasing"), 520);
+  }, 550);
+}
+
+
       el.scrollIntoView({ behavior: "smooth", block: "start" });
     });
+
   });
 
   // Project filter + search
