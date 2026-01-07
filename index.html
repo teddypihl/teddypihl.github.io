@@ -4,7 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Karl-Theodor Pihl – Developer Portfolio</title>
-  <meta name="description" content="Portfolio of Karl-Theodor Pihl: maps, visualization, automation, and performance-oriented developer tools." />
+  <meta
+    name="description"
+    content="Portfolio of Karl-Theodor Pihl: maps, visualization, automation, and performance-oriented developer tools."
+  />
   <link rel="stylesheet" href="styles.css" />
 </head>
 
@@ -16,100 +19,50 @@
       <div class="nav-left">
         <div class="brand">
           <div class="brand-text">
-            <div class="brand-name">Karl-Theodor Pihl</div>
+            <div class="brand-name">Karl-Theodor Pihl </div> 
             <div class="brand-sub">Computer Engineering · Åbo Akademi</div>
           </div>
         </div>
       </div>
 
       <nav class="nav-links" aria-label="Primary">
+        <a href="#about">About</a>
         <a href="#projects">Projects</a>
         <a href="#stack">Stack</a>
-        <a href="#experience">Experience</a>
-        <a href="#about">About</a>
         <a href="#contact" class="nav-cta">Contact</a>
       </nav>
     </div>
   </header>
 
-  <main id="main">
+  <main id="about">
     <!-- HERO -->
-    <section id="home" class="section hero">
-      <div class="inner hero-inner">
-        <div class="hero-text">
-          <p class="hero-kicker">Building practical tools where software meets the real world</p>
-          <h1>Hi, I’m Karl-Theodor.</h1>
-          <p class="hero-subtitle">
-            I build interactive, performance-minded web apps: route planning on real maps, Simulink-style control tools,
-            and real-time 3D visualization. I like projects with clear engineering constraints and crisp UX.
-          </p>
+   <section id="home" class="section hero">
+  <div class="inner hero-inner">
+    <!-- LEFT -->
+    <div class="hero-text">
+      <p class="hero-kicker">Building anything from cool Ui:s to practical tools</p>
+      <h1>Hi, I’m Karl-Theodor!</h1>
 
-          <div class="hero-actions">
-            <a class="btn primary" href="#projects">View projects</a>
-            <a class="btn ghost" href="https://github.com/teddypihl" target="_blank" rel="noopener">GitHub</a>
-            <!-- Optional: add CV PDF to repo root -->
-            <!-- <a class="btn ghost" href="/cv.pdf" target="_blank" rel="noopener">CV</a> -->
-          </div>
+      <p class="hero-subtitle">
+        I'm a computer engineering student at Åbo Akademi University, and I will be graduating before Christmas /26 with a masters in
+        computational data analytics. I'm eager to learn new things and I pick up on new stuff quickly and I'm activly looking for an engineering / programming job.
+        This page is dedicated to showcasing some of my skills and also with intent to share some cool fun looking projects.
+        Here you can find anything from practical PiD controller tools to wind tunnel visualizations here. Please reach out if you want to chat further!
+      </p>
 
-          <div class="hero-chips" aria-label="Highlights">
-            <span class="chip chip--glow">Frontend + Backend</span>
-            <span class="chip">Maps + Algorithms</span>
-            <span class="chip">3D + Visualization</span>
-            <span class="chip">Automation</span>
-          </div>
-
-          <div class="hero-metrics">
-            <div class="metric">
-              <div class="metric-top">Focus</div>
-              <div class="metric-main">Interactive engineering tools</div>
-              <div class="metric-sub">Performance · UX · deployable projects</div>
-            </div>
-            <div class="metric">
-              <div class="metric-top">Location</div>
-              <div class="metric-main">Finland</div>
-              <div class="metric-sub">Open to internships / junior roles</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="hero-side">
-          <div class="hero-card">
-            <div class="hero-card-row">
-              <span class="pill pill--ok">Available</span>
-              <span class="pill">2026 grad target</span>
-            </div>
-
-            <h2 class="hero-card-title">Currently</h2>
-            <p class="hero-card-main">
-              Finishing my Master’s degree in Computer Engineering and building complete, end-to-end projects:
-              idea → prototype → deploy → iterate.
-            </p>
-
-            <div class="mini-list">
-              <div class="mini-item">
-                <div class="mini-dot"></div>
-                <div>
-                  <div class="mini-title">What I care about</div>
-                  <div class="mini-text">Clear interfaces, measurable results, clean code</div>
-                </div>
-              </div>
-              <div class="mini-item">
-                <div class="mini-dot"></div>
-                <div>
-                  <div class="mini-title">What I enjoy</div>
-                  <div class="mini-text">Maps, control systems, visualization, automation</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="hero-card-actions">
-              <a class="btn small ghost" href="#contact">Contact</a>
-              <a class="btn small ghost" href="#projects">See work</a>
-            </div>
-          </div>
-        </div>
+      <div class="hero-actions">
+        <a class="btn primary" href="#projects">View projects</a>
+        <a class="btn ghost" href="https://github.com/teddypihl" target="_blank" rel="noopener">GitHub</a>
       </div>
-    </section>
+    </div>
+
+    <!-- RIGHT (your photo) -->
+    <div class="hero-photo">
+      <img src="assets/me.png" alt="Photo of Karl-Theodor Pihl" loading="lazy" />
+    </div>
+  </div>
+</section>
+
 
     <!-- PROJECTS -->
     <section id="projects" class="section">
@@ -139,11 +92,41 @@
         </div>
 
         <div class="projects-grid">
+          <!-- FixVault -->
+          <article class="project-card reveal" data-tags="backend,devtool,cli,node,typescript,sqlite">
+            <div class="project-top">
+              <p class="project-label">Dev Tool · CLI · SQLite</p>
+              <div class="project-badges">
+                <span class="badge">npm</span>
+                <span class="badge">Dedupe</span>
+              </div>
+            </div>
+
+            <h3 class="project-title">FixVault</h3>
+            <p class="project-tagline">Save errors + what fixed them. Find the fix instantly next time.</p>
+
+            <p class="project-description">
+              A tiny CLI that captures error output from stdin, stores it in SQLite with git context, dedupes repeated
+              errors via fingerprinting, and fuzzy-searches past fixes. Includes note editing via editor (VS Code
+              auto-detect + nano fallback).
+            </p>
+
+            <ul class="project-bullets">
+              <li>Pipe-first UX: <code>cmd 2&gt;&amp;1 | fix add</code></li>
+              <li>Fuzzy search + repo-scoped search by default</li>
+              <li>SQLite storage + links + editable fix notes</li>
+            </ul>
+
+            <p class="project-meta">Node.js · TypeScript · Commander · Fuse.js · better-sqlite3 · npm</p>
+
+            <div class="project-links">
+              <a class="btn primary" href="https://www.npmjs.com/package/fixvault" target="_blank" rel="noopener">npm</a>
+              <a class="btn ghost" href="https://github.com/teddypihl/fixvault" target="_blank" rel="noopener">Source code</a>
+            </div>
+          </article>
 
           <!-- PID Lab -->
-          <article class="project-card reveal"
-            data-tags="frontend,react,control,simulation,typescript"
-          >
+          <article class="project-card reveal" data-tags="frontend,react,control,simulation,typescript">
             <div class="project-top">
               <p class="project-label">Control · Simulation · React</p>
               <div class="project-badges">
@@ -156,8 +139,9 @@
             <p class="project-tagline">Simulink-style PID playground in the browser.</p>
 
             <p class="project-description">
-              Block-diagram editor where you drag blocks (Step, Controller, Plant, Scope), connect them, and run a first-order simulation with P/PI/PID control.
-              The scope overlay shows the step response directly in-canvas with performance metrics (overshoot, rise time, steady-state error).
+              Block-diagram editor where you drag blocks (Step, Controller, Plant, Scope), connect them, and run a
+              first-order simulation with P/PI/PID control. The scope overlay shows the step response directly in-canvas
+              with performance metrics (overshoot, rise time, steady-state error).
             </p>
 
             <ul class="project-bullets">
@@ -175,9 +159,7 @@
           </article>
 
           <!-- Wind Tunnel -->
-          <article class="project-card reveal"
-            data-tags="frontend,viz,3d,threejs,react,typescript"
-          >
+          <article class="project-card reveal" data-tags="frontend,viz,3d,threejs,react,typescript">
             <div class="project-top">
               <p class="project-label">Aero · Visualization · Three.js</p>
               <div class="project-badges">
@@ -190,10 +172,10 @@
             <p class="project-tagline">Real-time airflow visualization around a simplified car + wings.</p>
 
             <p class="project-description">
-              A lightweight wind tunnel sandbox for intuition: thousands of instanced particles advect through a procedural flow field.
-              Includes deflection around a smooth car body, underfloor acceleration + suction (diffuser / ride height),
-              wing downwash effects, turbulence, and a wake with a velocity deficit + counter-rotating vortex pair.
-              Tuned for interactive performance and clarity (not full CFD).
+              A lightweight wind tunnel sandbox for intuition: thousands of instanced particles advect through a
+              procedural flow field. Includes deflection around a smooth car body, underfloor acceleration + suction
+              (diffuser / ride height), wing downwash effects, turbulence, and a wake with a velocity deficit +
+              counter-rotating vortex pair. Tuned for interactive performance and clarity (not full CFD).
             </p>
 
             <ul class="project-bullets">
@@ -211,9 +193,7 @@
           </article>
 
           <!-- Tiny Run Router -->
-          <article class="project-card reveal"
-            data-tags="backend,frontend,algorithms,fastapi,maps,python"
-          >
+          <article class="project-card reveal" data-tags="backend,frontend,algorithms,fastapi,maps,python">
             <div class="project-top">
               <p class="project-label">Maps · Algorithms · FastAPI</p>
               <div class="project-badges">
@@ -226,8 +206,9 @@
             <p class="project-tagline">Generate running loops on real streets, then edit and snap back to the road network.</p>
 
             <p class="project-description">
-              Backend fetches a walkable graph from OpenStreetMap (OSMnx), builds a graph model and searches for “nice” loops with a Dijkstra-based approach.
-              Frontend (vanilla JS + Leaflet) lets you drag vertices, rubber-band the route, then re-snap to roads and recompute distance/elevation.
+              Backend fetches a walkable graph from OpenStreetMap (OSMnx), builds a graph model and searches for “nice”
+              loops with a Dijkstra-based approach. Frontend (vanilla JS + Leaflet) lets you drag vertices, rubber-band
+              the route, then re-snap to roads and recompute distance/elevation.
             </p>
 
             <ul class="project-bullets">
@@ -243,7 +224,6 @@
               <a class="btn ghost" href="https://github.com/teddypihl/tiny-run-router" target="_blank" rel="noopener">Source code</a>
             </div>
           </article>
-
         </div>
       </div>
     </section>
@@ -306,95 +286,6 @@
       </div>
     </section>
 
-    <!-- EXPERIENCE -->
-    <section id="experience" class="section">
-      <div class="inner">
-        <h2 class="section-title">Experience</h2>
-        <p class="section-lead">A quick timeline of what I’m doing and what I want to do next.</p>
-
-        <div class="timeline">
-          <div class="timeline-item reveal">
-            <div class="timeline-dot"></div>
-            <div class="timeline-card">
-              <div class="timeline-top">
-                <div class="timeline-title">M.Sc. Computer Engineering</div>
-                <div class="timeline-time">Åbo Akademi · Ongoing</div>
-              </div>
-              <div class="timeline-text">
-                Focus: automation, data-heavy apps, safety-critical & autonomous systems.
-              </div>
-            </div>
-          </div>
-
-          <div class="timeline-item reveal">
-            <div class="timeline-dot"></div>
-            <div class="timeline-card">
-              <div class="timeline-top">
-                <div class="timeline-title">Portfolio Projects</div>
-                <div class="timeline-time">2024–2025</div>
-              </div>
-              <div class="timeline-text">
-                Building end-to-end tools (routing, simulation, 3D visualization), shipping to GitHub Pages / Render, iterating from user feedback.
-              </div>
-            </div>
-          </div>
-
-          <div class="timeline-item reveal">
-            <div class="timeline-dot"></div>
-            <div class="timeline-card">
-              <div class="timeline-top">
-                <div class="timeline-title">Open to opportunities</div>
-                <div class="timeline-time">Internships · Junior dev</div>
-              </div>
-              <div class="timeline-text">
-                Interested in frontend, backend, full-stack, or developer tools — ideally with an engineering/visualization angle.
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about" class="section">
-      <div class="inner">
-        <h2 class="section-title">About</h2>
-        <div class="about-grid">
-          <div class="reveal">
-            <p>
-              I’m a computer engineering student with a strong interest in software that interacts with the real world:
-              maps, sensors, automation, and performance-oriented systems.
-            </p>
-            <p>
-              I like understanding how things work under the hood — from graph algorithms to simulation loops —
-              and packaging them into clean, practical tools.
-            </p>
-          </div>
-          <div class="reveal">
-            <p>
-              Outside of studies I’m into running and sports, which is why many of my ideas relate to routes,
-              training data, and tools that make everyday life a bit easier (or more fun).
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="section">
-      <div class="inner">
-        <div class="cta reveal">
-          <div>
-            <h2 class="cta-title">Want to build something useful?</h2>
-            <p class="cta-text">
-              If you’re hiring or want to collaborate, I’m happy to chat.
-            </p>
-          </div>
-          <a class="btn primary" href="#contact">Contact me</a>
-        </div>
-      </div>
-    </section>
-
     <!-- CONTACT -->
     <section id="contact" class="section section--last">
       <div class="inner">
@@ -408,7 +299,6 @@
 
         <div class="contact-links reveal">
           <a href="https://github.com/teddypihl" target="_blank" rel="noopener">GitHub</a>
-          <!-- Add LinkedIn when ready -->
           <!-- <a href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener">LinkedIn</a> -->
         </div>
       </div>
