@@ -1,5 +1,5 @@
 "use client";
-import { Check, ChevronRight, Loader2 } from "lucide-react";
+import { ChevronRight, Loader2 } from "lucide-react";
 import React from "react";
 import { Label } from "./ui/label";
 import { Input } from "./ui/ace-input";
@@ -7,7 +7,7 @@ import { Textarea } from "./ui/ace-textarea";
 import { cn } from "@/lib/utils";
 import { useToast } from "./ui/use-toast";
 import { Button } from "./ui/button";
-import { useRouter } from "next/navigation";
+import emailjs from "@emailjs/browser";
 
 const ContactForm = () => {
   const [fullName, setFullName] = React.useState("");
@@ -16,39 +16,30 @@ const ContactForm = () => {
   const [loading, setLoading] = React.useState(false);
 
   const { toast } = useToast();
-  const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
     try {
-      const res = await fetch("/api/send", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+      await emailjs.send(
+        "service_pnm9nzv",
+        "template_wxsi9s5",
+        {
+          from_name: fullName,
+          from_email: email,
+          message: message,
         },
-        body: JSON.stringify({
-          fullName,
-          email,
-          message,
-        }),
-      });
-      const data = await res.json();
-      if (data.error) throw new Error(data.error);
+        "RuoPtlN624nNWOZW2"
+      );
       toast({
         title: "Thank you!",
         description: "I'll get back to you as soon as possible.",
         variant: "default",
         className: cn("top-0 mx-auto flex fixed md:top-4 md:right-4"),
       });
-      setLoading(false);
       setFullName("");
       setEmail("");
       setMessage("");
-      const timer = setTimeout(() => {
-        router.push("/");
-        clearTimeout(timer);
-      }, 1000);
     } catch (err) {
       toast({
         title: "Error",
